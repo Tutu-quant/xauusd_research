@@ -1,0 +1,67 @@
+
+{
+  "market": {
+    "instrument": "XAUUSD",
+    "provider": "Dukascopy",
+    "timeframe": "D1",
+    "start_date": "2020-01-01",
+    "end_date": "2025-12-31",
+    "timezone": {
+      "provider": "America/New_York",
+      "storage": "UTC"
+    },
+    "price_sides": [
+      "BID",
+      "ASK"
+    ]
+  },
+  "data": {
+    "bronze": {
+      "path": "data/bronze/market/dukascopy_raw"
+    },
+    "silver": {
+      "path": "data/silver/market",
+      "format": [
+        "parquet",
+        "csv"
+      ],
+      "filename": "XAUUSD_D1_2020_2025"
+    },
+    "gold": {
+      "path": "data/gold/market"
+    }
+  },
+  "columns": {
+    "raw": [
+      "time",
+      "open",
+      "high",
+      "low",
+      "close",
+      "volume"
+    ],
+    "silver": [
+      "time",
+      "bid_open",
+      "bid_high",
+      "bid_low",
+      "bid_close",
+      "bid_volume",
+      "ask_open",
+      "ask_high",
+      "ask_low",
+      "ask_close",
+      "ask_volume",
+      "spread_close"
+    ]
+  },
+  "quality_checks": {
+    "check_missing_values": true,
+    "check_duplicate_timestamps": true,
+    "check_ohlc_validity": true,
+    "check_nonpositive_prices": true,
+    "check_bid_ask_alignment": true,
+    "check_negative_spread": true,
+    "check_timestamp_order": true
+  }
+}
