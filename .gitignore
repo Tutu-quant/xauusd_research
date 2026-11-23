@@ -218,3 +218,17 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+# XAUUSD Research Project
+
+# Research datasets
+data/
+
+# Project logs
+logs/
+
+# Environment variables and secrets
+.env.*
+!.env.example
+
+# Local Python environment
+.venv/
